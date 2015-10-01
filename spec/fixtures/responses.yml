@@ -1,0 +1,11 @@
+response_1:
+  response_group: 1
+  question_id: 3
+  answer_text: First survey
+  created_at: 04-05-2015
+
+response_2:
+  response_group: 2
+  question_id: 5
+  answer_text: Second survey
+  created_at: 05-05-2015

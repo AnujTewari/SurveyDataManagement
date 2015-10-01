@@ -1,0 +1,35 @@
+%h1 Surveys Alloted for #{@user.email}
+%table#users
+  %thead
+    %tr
+      %th Survey ID
+      %th Survey Name
+      %th User Email
+      %th User ID
+      %th Delete
+
+  %tbody
+    - if @surveyuser != nil
+      - @surveyuser.each do |suser|
+        %tr
+          %td= suser.surveyid
+          %td= suser.survey_name
+          %td= suser.email
+          %td= suser.userid
+          %td= link_to "Delete", survey_user_path(suser), :method => :delete
+
+
+= link_to 'Back', survey_users_path
+
+- if @choices.size != 0
+  %h2 Add Survey
+
+  = form_tag survey_users_path, :method => :post do
+
+    = hidden_field_tag :userid, @user.id
+
+    = label :suser, :surveyid, 'Survey Name'
+    = select :suser, :surveyid, @namechoices
+
+    = submit_tag 'Add Survey'
+

@@ -1,0 +1,18 @@
+%h2 Create New User
+
+= form_tag manageusers_path, :method => :post do
+
+  = label :user, :email, 'Email/UserName'
+  = text_field :user, :email
+
+  = label :user, :password, 'Password'
+  = text_field :user, :password
+
+  = label :user, :password_confirmation, 'Password confirmation'
+  = text_field :user, :password_confirmation
+
+  = label :user, :admin, 'User Type'
+  = select :user, :admin,['User','Admin']
+
+  = submit_tag 'Save Changes'
+

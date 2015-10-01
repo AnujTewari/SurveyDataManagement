@@ -1,0 +1,39 @@
+%h1 All Users
+
+%table#users
+  %thead
+    %tr
+      %th Email
+      -#%th Password
+      -#%th Created At
+      %th Admin
+      %th Last Sign In
+      %th IP
+      %th Change Password
+      %th Delete
+      -#%th Manage Surveys
+
+  %tbody
+    - @users.each do |user|
+      %tr
+        %td= link_to user.email
+        - if user.admin == 0
+          %td= "No"
+        - else
+          %td= "Yes"
+        -#%td= user.encrypted_password
+        -#%td= user.remember_created_at
+        %td= user.last_sign_in_at
+        %td= user.last_sign_in_ip
+        - if user.admin != 2
+          %td= link_to "Password", edit_manageuser_path(user)
+          %td= link_to "Delete", manageuser_path(user), :method => :delete
+        - else 
+          %td= "NA"
+          %td= "NA"
+        -#%td= link_to "Manage",manageuser_survey_users_path(user)
+
+
+= link_to 'Add Users', new_manageuser_path, :class => 'btn'
+= link_to 'Home', surveys_path, :class => 'homeLink btn'
+        

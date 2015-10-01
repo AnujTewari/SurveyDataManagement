@@ -1,0 +1,14 @@
+%h2 Update Password for #{@user.email}
+
+= form_tag manageuser_path(@user), :method => :put do
+
+  = label :user, :password, 'Password'
+  = text_field :user, :password
+
+  = label :user, :password_confirmation, 'Password confirmation'
+  = text_field :user, :password_confirmation
+
+  = label :user, :admin, 'User Type'
+  = select :user, :admin,['User','Admin']
+
+  = submit_tag 'Save Changes'

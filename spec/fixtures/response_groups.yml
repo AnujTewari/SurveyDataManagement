@@ -1,0 +1,9 @@
+response_group1:
+  survey_id: 3
+  created_at: 04-05-2015
+  updated_at: 04-05-2015
+
+response_group2:
+  survey_id: 5
+  created_at: 12-03-2015
+  updated_at: 12-03-2015

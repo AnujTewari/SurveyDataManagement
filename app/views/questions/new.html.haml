@@ -1,0 +1,19 @@
+%h2 Create New Question
+
+= form_tag survey_questions_path, :method => :post do
+
+  = label :question, :question, 'Question'
+  = text_area :question, :question, :id=>'questionInput'
+
+  = label :question, :response_type, 'Response Type'
+  = select :question, :response_type, ['Multiple Choice', 'Yes/No', 'True/False','Open Ended']
+
+  = label :question, :response_values, 'Response Values'
+  = text_field :question, :response_values, :placeholder => 'Enter comma separated values'
+
+  = label :question, :dependency, 'Dependency'
+  = text_area :question, :dependency
+
+  = submit_tag 'Save Changes'
+
+= link_to "Back", survey_questions_path(params[:survey_id]), :class => 'btn'

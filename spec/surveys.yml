@@ -1,0 +1,11 @@
+survey_1:
+  survey_name: Survey1
+  surveyor_name: MrX
+  description: First survey
+  survey_creation_date: 04-05-2015
+
+survey_2:
+  survey_name: Survey2
+  surveyor_name: MrY
+  description: Second survey
+  survey_creation_date: 04-05-2015
