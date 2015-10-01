@@ -1,0 +1,13 @@
+user1:
+  email: user@surveybuilder.com
+  encrypted_password: user1234
+  #password: user1234
+  #password_confirmation: user1234
+
+
+user2:
+  email: user2@surveybuilder.com
+  encrypted_password: user1234
+
+
+

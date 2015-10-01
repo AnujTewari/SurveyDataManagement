@@ -1,0 +1,42 @@
+!!! 5
+%html
+  %head
+    %title Multi Site Survey Application
+    = stylesheet_link_tag 'application'
+    = javascript_include_tag 'application'
+    = javascript_include_tag 'jquery'
+    = csrf_meta_tags
+    
+  %body
+    %div#frameDiv
+      - if user_signed_in?
+        %div#headerDiv
+          %div#loggedInDiv
+            Logged in as
+            = succeed "" do
+              %strong= current_user.email
+          %div#userLogDiv
+            - if current_user.admin == 2 # root 
+              = link_to 'Manage Users', manageusers_path, :class => 'navbar-link', :id => 'manageUsersButton'
+            = link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'
+            -#= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link'
+            -#|
+            -#\#{link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'}            
+      - else
+        %h1 Survey Builder
+        -#- if request.env['PATH_INFO'] != "/users/sign_up"
+        -#  = link_to "Sign up", new_user_registration_path, :class => 'navbar-link'
+        - if request.env['PATH_INFO'] != "/users/sign_in"
+          = link_to "Home", surveys_path, :class => 'navbar-link'
+
+    -# this goes just inside %body:
+    - if flash[:notice]
+      #notice.message= flash[:notice]
+    - elsif flash[:warning]
+      #warning.message= flash[:warning]          
+
+
+
+    = yield
+
+

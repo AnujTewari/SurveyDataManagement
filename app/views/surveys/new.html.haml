@@ -1,0 +1,15 @@
+%h2 Create New Survey
+
+= form_tag surveys_path, :method => :post do
+
+  = label :survey, :survey_name, 'Survey Name'
+  = text_field :survey, :survey_name
+
+  = label :survey, :surveyor_name, 'Surveyor Name'
+  = text_field :survey, :surveyor_name
+
+  = label :survey, :description, 'Survey Description'
+  = text_area :survey, :description
+
+  = submit_tag 'Save Changes'
+  = link_to 'Back', surveys_path, :class => 'btn'

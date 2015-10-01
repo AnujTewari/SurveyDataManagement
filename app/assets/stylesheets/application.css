@@ -1,0 +1,316 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+/*KUM New Comment*/
+
+/* Simple CSS styling for RottenPotatoes app */
+/* Add these lines to app/assets/stylesheets/application.css */
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300,600italic,400italic,300italic,700italic);
+
+html, body {
+  margin: 10;
+  padding: 0;  
+  background: #FFFFFF;
+  color: black;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12pt;
+  text-align: center;
+  display: block;
+  
+ }
+
+#headerDiv { 
+  background-color: gray;
+  width: 100%;
+  height: 65px;
+}
+
+#loggedInDiv{
+  display: inline;
+  text-align: center; 
+  margin-left:100px;
+  vertical-align: middle;
+  padding-top: 20px;
+}
+
+#userLogDiv{
+  display: inline;
+  float: right; 
+  padding-top: 5px;
+  padding-right: 10px;
+}
+ 
+div#main {
+  margin: 0;
+  padding: 0 20px 20px;
+}
+
+#menuDiv {
+  margin: auto auto;
+  width: 800px;
+  height: 60px;
+  margin-top: 20px;
+}
+
+#searchDiv {
+  margin: 0 auto;
+  width: 300px;
+  height: 110px;
+  background-color: #34495E;
+  padding: 10px;
+  border-radius: 5px;
+  display:block; 
+}
+
+#menuLinks{
+  display:relative;
+  float:left;
+  margin-left: 50px; 
+}
+
+#createSurveys, #addUserToSurveys{
+  padding-left: 10px;
+  padding-right: 10px; 
+}
+
+#questionsPageButtons {
+  padding-bottom: 20px;
+}
+
+#orderSpanDiv {
+  font-weight: bold;
+}
+
+#newQuesOrderDiv {
+  margin-top: 20px;
+  padding-top: 20px;
+  width: 300px;
+  height: 100px;
+  margin: 0 auto;
+  background-color: gray;
+  border-radius: 5px;
+  display: inline-block
+}
+
+#searchHead {
+  font-size: 20px;
+  color: #31BC86;
+  font-weight: 700;
+  padding-bottom:10px;
+}
+
+#search_survey_input {
+  width: 250px;
+  height: 25px;
+}
+
+#search_survey_button {
+  margin-top: 10px;
+}
+
+a {
+  background: transparent;
+  color: black;
+  text-decoration: underline;
+  font-weight: bold;
+  text-align: center;  
+}
+
+h1 {
+  color: #E05151;
+  text-align: center;
+  font-size: 38px; font-family: 'Tangerine', serif; padding-bottom: 10px;
+}
+
+h1.title {
+  margin: 0 0 1em;
+  padding: 10px;
+  background-color: orange;
+  color: black;
+  border-bottom: 4px solid gold;
+  font-size: 2em;
+  font-style: normal;
+  text-align: center;
+}
+
+table#surveys, table#questions {
+  margin-top: 20px;
+  border-collapse: collapse;
+  width: 100%; 
+}
+
+table#surveys th, table#questions th, table#users th, table#response_summary th{
+  font-weight: bold;
+  /*background-color: #E05151;*/
+  background-color: #31BC86;
+  
+}
+table#surveys th, table#questions th, table#response_summary th{
+  padding: 10px;
+}
+
+table#surveys tr, table#response_summary tr {
+  background-color: #34495E;
+  color: white;
+}
+
+table#surveys tr a {
+  color: white;
+}
+
+table#surveys td, table#questions td, table#users td, table#response_summary td {
+  padding: 6px;
+}
+
+table { 
+    margin-left: auto;
+    margin-right: auto;
+}
+  
+#notice, #warning {
+  background: #007CB0;
+  margin: 0.5em 0;
+  padding: 4px;
+}
+
+form {
+  text-align:center;
+  display:block;
+  font-weight: bold;
+  position: relative;
+  color: black;
+  float: bottom;
+  width: auto;	
+}
+
+label{
+  display:block;
+}
+
+text{
+  display:block;
+  position:relative;
+  text-align:center;
+  width:20%;
+  background-color:#00FF00;
+}
+
+input[type = 'submit']{	
+  position: relative;
+  display: block;
+  width: relative;
+  margin: 7px auto;
+  padding: 3px;
+  font-size: 14px;
+  color: #f2f2f2;
+  text-align: center;
+  background: #E05151;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+ }
+	 
+#newQuestionForm, #createNewQuestionHeading{
+  display: none;
+}
+
+.navbar-link {
+  background: #E05151;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  display: block;
+  width: 100px;
+  color: white;
+  margin: 7px auto;
+  text-decoration: none;
+  padding: 2px;
+}
+
+textarea {
+  width: 225px;
+  height: 100px;
+}
+
+#questionInput {
+  width: 450px;
+  height: 100px;
+}
+
+#question_response_type {
+  width: 200px;
+}
+
+#question_dependency {
+  width: 200px;
+  height: 50px;
+}
+
+input[type="radio"] {
+  display: inline;
+}
+
+.take_survey_label{
+  display: inline;
+}
+
+#take_survey_save{
+  margin-top: 30px;
+}
+
+.btn {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #E6E6E6, #CCCCCC);
+  background-image: -moz-linear-gradient(top, #E6E6E6, #CCCCCC);
+  background-image: -ms-linear-gradient(top, #E6E6E6, #CCCCCC);
+  background-image: -o-linear-gradient(top, #E6E6E6, #CCCCCC);
+  background-image: linear-gradient(to bottom, #E6E6E6, #CCCCCC);
+  -webkit-border-radius: 3;
+  -moz-border-radius: 3;
+  border-radius: 3px;
+  color: #000000;
+  font-size: 14px;
+  padding: 5px 10px 5px 10px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #cdcdcd, #b3b3b3);
+  background-image: -moz-linear-gradient(top, #cdcdcd, #b3b3b3);
+  background-image: -ms-linear-gradient(top, #cdcdcd, #b3b3b3);
+  background-image: -o-linear-gradient(top, #cdcdcd, #b3b3b3);
+  background-image: linear-gradient(to bottom, #cdcdcd, #b3b3b3);
+  text-decoration: none;
+}
+
+#questionsOrderHeading {
+  display: inline;
+  margin-top: 125px;
+}
+
+#take_survey_confirm{
+  display: inline-block;
+  margin-top: 20px;
+}
+
+#manageUsersButton{
+  display: inline;
+  float: none;
+}

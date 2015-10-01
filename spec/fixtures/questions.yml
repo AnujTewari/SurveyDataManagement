@@ -1,0 +1,13 @@
+question_1:
+  survey_id: 3
+  question: "How are you doing today?"
+  response_type: "Open-ended"
+  response_values: "Very good! Thank you"
+  dependency: ""
+
+question_2:
+  survey_id: 5
+  question: "How old are you?"
+  response_type: "Open-ended"
+  response_values: "22"
+  dependency: ""

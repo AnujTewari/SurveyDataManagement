@@ -1,0 +1,53 @@
+-#  This file is app/views/questions/show.html.haml
+%script(src="/app/assets/questions.js")
+
+%h1 All Questions
+%div#questionsPageButtons
+  = link_to 'Home', surveys_path, :class => 'homeLink btn'
+  = link_to 'Create New Question', new_survey_question_path, :class => 'createNewQuestions btn'
+
+%div#orderSpanDiv
+  %span#questionsOrderHeading=  'Current Order of Questions :'
+  %span= @survey.questions_order
+
+%table#questions
+  %thead
+    %tr
+      %th Question ID
+      %th Survey Question
+      %th Response Type
+      %th Response Values
+      %th Dependency
+      %th Delete
+  %tbody
+    - @questions.each do |question|
+      %tr
+        %td= question.id
+        %td= question.question
+        %td= question.response_type
+        %td= question.response_values 
+        %td= question.dependency    
+        %td= link_to "Delete", survey_question_path(params[:survey_id],question), :method => :delete
+
+
+%div#newQuesOrderDiv
+  = form_tag survey_questions_order_path, :method => :post do
+    = label :question, :questions_order, 'Questions Order', :id=>'questionPageLabel'
+    = text_field :question, :questions_order
+    = submit_tag 'Save Changes'
+
+
+%h2{:id => "createNewQuestionHeading"} Create New Question
+
+= form_tag survey_questions_path, :method => :post, :id => "newQuestionForm" do
+
+  = label :question, :question, 'Question'
+  = text_area :question, :question
+
+  = label :question, :response_type, 'Response Type'
+  = select :question, :response_type, [:multiple_choice, :yes_or_no, :true_or_false, :open_ended]
+
+  = label :question, :response_values, 'Response Values'
+  = text_field :question, :response_values
+
+  = submit_tag 'Save Changes', :id => "submitNewQuestionButton"

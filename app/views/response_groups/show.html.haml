@@ -1,0 +1,31 @@
+%h2 Please answer these Questions
+%hr
+
+= form_tag survey_response_group_next_question_path(:response_group_id=>4), :method => :post do
+  = label :response, @current_question.id, @current_question.question
+  - if @current_question.response_type == 'Open Ended'
+    %div
+      = text_area :response, @current_question.id
+  - elsif @current_question.response_type == 'Yes/No'
+    %div
+      %div
+        %input{:id => "true", :name => "response["+@current_question.id.to_s+"]", :type => "radio", :value => "Yes"}
+        %label{:for => "true", :class => 'take_survey_label'} Yes
+      %div
+        %input{:id => "false", :name => "response["+@current_question.id.to_s+"]", :type => "radio", :value => "No"}
+        %label{:for => "false", :class => 'take_survey_label'} No
+  - elsif @current_question.response_type == 'True/False'
+    %div
+      %div
+        %input{:id => "true", :name => "response["+@current_question.id.to_s+"]", :type => "radio", :value => "True"}
+        %label{:for => "true", :class => 'take_survey_label'} True
+      %div
+        %input{:id => "false", :name => "response["+@current_question.id.to_s+"]", :type => "radio", :value => "False"}
+        %label{:for => "false", :class => 'take_survey_label'} False
+  - else
+    - @current_question.response_values.split(/,+/).each do |option|
+      %div
+        %input{:id => "response_"+option, :name => "response["+@current_question.id.to_s+"]", :type => "radio", :value => option}
+        = label :response, option, :class => 'take_survey_label'
+
+  = submit_tag 'Save Changes', :id => 'take_survey_save'

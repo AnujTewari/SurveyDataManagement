@@ -1,0 +1,15 @@
+%h1 All Users
+
+%table#users
+  %thead
+    %tr
+      %th Email
+
+  %tbody
+    - @users.each do |user|
+      %tr
+        - if user.admin == 0
+          %td= link_to user.email,  survey_user_path(user)
+
+
+= link_to 'Back', surveys_path

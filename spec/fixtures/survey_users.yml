@@ -1,0 +1,13 @@
+survey_user1:
+  userid: 2
+  surveyid: 4
+  email: user1@surveybuilder.com
+  survey_name: Survey1
+
+
+survey_user2:
+  userid: 3
+  surveyid: 5
+  email: user2@surveybuilder.com
+  survey_name: Survey2
+
